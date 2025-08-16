@@ -1,0 +1,24 @@
+# Core framework
+fastapi
+uvicorn[standard]
+
+# Ollama local LLM
+ollama
+
+# Data validation / settings
+pydantic
+python-dotenv
+
+# HTTP requests
+httpx
+requests
+
+# Database (pick one depending on your use)
+sqlalchemy
+psycopg2-binary    # for PostgreSQL
+# mysqlclient      # uncomment if MySQL
+# motor            # uncomment if MongoDB
+
+# Utilities
+pandas             # if you need data processing
+numpy              # numeric ops

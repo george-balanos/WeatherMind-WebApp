@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    volumes:
+      - ./backend:/app
+      - ollama_models:/root/.ollama   # persist downloaded models
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend/weather-mind
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  ollama_models:
