@@ -1,6 +1,16 @@
 # Weather-Mind Web App
 
-A full-stack web application combining **React frontend**, **FastAPI backend**, and **Ollama LLM** for local AI queries. Fully Dockerized for easy setup and sharing.
+* A full-stack web application combining React frontend, FastAPI backend, and Ollama LLM for local AI queries.
+* This app allows users to ask the LLM for the current temperature in a specific location (approximately 5 minutes prior). Fully Dockerized for easy setup and sharing.
+* The application uses Open-Meteo(https://open-meteo.com/), a free weather forecast API (usage may be limited by IP-based throttling)⚠️
+
+### ⚠️ Caution: For better performance, users can switch to a more advanced LLM by changing the corresponding model name in the docker-compose.yml.
+
+### LLM currently used: ```llama3.2:3b-instruct-q8_0```
+
+---
+
+<img width="1918" height="905" alt="Στιγμιότυπο οθόνης 2025-08-16 203845" src="https://github.com/user-attachments/assets/dfcd2bbe-ec37-4275-958c-4e4d0e309cc4" />
 
 ---
 
@@ -36,22 +46,6 @@ Optional (if running locally without Docker):
 
 ---
 
-## Environment Variables
-
-### Backend
-
-- `OLLAMA_URL` → URL to the Ollama service
-  - In Docker: `http://ollama:11434`
-  - Local fallback: uses Ollama Python library directly
-
-### Frontend
-
-- `REACT_APP_API_URL` → URL to backend API
-  - Local dev: `http://localhost:8000`
-  - In Docker: `http://backend:8000`
-
----
-
 ## Running the App
 
 ### 1. Clone the repository
@@ -80,16 +74,6 @@ This will start three containers:
 
 ---
 
-## Docker Networking Notes
-
-- Each container has its own network namespace.
-- Services communicate by **Docker service name** (e.g., `backend`, `ollama`) instead of `localhost`.
-- Inside Docker:
-  - Frontend → Backend: `http://backend:8000`
-  - Backend → Ollama: `http://ollama:11434`
-
----
-
 ## Development Notes
 
 - Frontend can still be run locally:
@@ -106,22 +90,11 @@ This will start three containers:
   cd backend
   uvicorn src.api.main:app --reload
   ```
-
-- Use `.env` files for switching between **local dev** and **Dockerized environment**.
-
 ---
 
-## Troubleshooting
+License
 
-- **Ollama not responding in Docker**
-  - Make sure the `ollama` container is running
-  - Backend should use `OLLAMA_URL=http://ollama:11434`
-- **Ports conflicts**
-  - Ensure `3000` (frontend) and `8000` (backend) are free on your host machine
-- **Frontend can’t reach backend**
-  - In Docker, frontend must call `http://backend:8000`, not `localhost:8000`
-
----
+MIT License
 
 ## License
 
