@@ -1,0 +1,162 @@
+.input-panel {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#input-form {
+    /* border: 1px solid black; */
+
+    height: 60%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    height: 30%;
+    width: 70%;
+
+    background-color: rgba(255, 255, 255, 0.25); /* light transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#llm-input {
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    overflow: auto;
+    outline: none;
+
+    padding: 5px;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+
+    height: 90%;
+    width: 95%;
+
+    text-align: left;
+
+    color: rgb(75, 75, 75);
+    font-size: 1.1em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, 1); /* light transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(59, 59, 59, 0.8);
+    border-radius: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: 200;
+    font-family: "Inter", sans-serif;
+}
+
+#llm-input-label {
+    /* border: 1px solid black; */
+    color: rgb(53, 53, 53);
+    font-weight: 300;
+    font-family: "Inter", sans-serif;
+    font-size: 1.3em;
+    
+    padding-bottom: 10px;
+}
+
+#ai {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;   
+}
+
+button {
+    all: unset;
+
+    padding: 5px 10px;
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.25); /* light transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
+
+    color: rgb(56, 56, 56);
+    font-weight: 300;
+    font-family: "Inter", sans-serif;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+button:active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: rgba(117, 117, 117, 0.6);
+}
+
+.weather-info {
+    height: 100%;
+    width: 58%;
+
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.weather-display {
+    /* border: 1px solid black; */
+
+    height: 20%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(85, 85, 85);
+    font-weight: 200;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5em;
+}
+
+.text-display {
+    color: rgb(0, 0, 0);
+}
